@@ -14,7 +14,12 @@ Compiling to service + install (in winpython cmd as admin):
     set PYTHONPATH=C:\python37\python-3.7.1.amd64\Lib\
     pip install pyinstaller
     pyinstaller -F --hidden-import=win32timezone "capture_jsonp_to_file_service.py"
-    "dist\capture_jsonp_to_file_service.exe install"
+    mkdir "c:\scripts"
+    mkdir "c:\scripts\Capture-jsonp-to-file-service"
+    copy "dist\capture_jsonp_to_file_service.exe" "c:\scripts\Capture-jsonp-to-file-service\capture_jsonp_to_file_service.exe"
+    c:
+    cd "c:\scripts\Capture-jsonp-to-file-service"
+    "capture_jsonp_to_file_service.exe" install
     sc start "Capture JSONP to file service"
 ```
 
